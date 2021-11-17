@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Travel Wishlist</title>
+        
+        <!--Dark theme:https://github.com/kognise/water.css-->
+        <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.min.css">-->
+
+        <!--Sakura: https://github.com/oxalorg/sakura-->
+        <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
+
+        <!--css file-->
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">
+    </head>
+    <body>
+
+        <h1 id="site-header">Where do you want to go?</h1>
+
+        {% block content %}
+        {% endblock %}
+    </body>
+
+    <div>
+        <p>A travel Wishlist, build with Django</p>
+        
+        <a class="nav-link" href="{% url 'place_list' %}">Places you've NOT visited</a>
+        <a class="nav-link" href="{% url 'places_visited' %}">Places you've visited</a>
+
+    </div>
+</html>
